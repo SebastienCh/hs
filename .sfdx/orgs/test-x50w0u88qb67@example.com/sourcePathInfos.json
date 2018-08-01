@@ -1,0 +1,114 @@
+[
+    [
+        "C:\\Users\\sebastien.chateau\\hs\\force-app",
+        {
+            "state": "n",
+            "sourcePath": "C:\\Users\\sebastien.chateau\\hs\\force-app",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 0,
+            "modifiedTime": 1533113259616,
+            "changeTime": 1533113259616,
+            "contentHash": "b28b7af69320201d1cf206ebf28373980add1451",
+            "isWorkspace": false,
+            "isArtifactRoot": true
+        }
+    ],
+    [
+        "C:\\Users\\sebastien.chateau\\hs\\force-app\\main",
+        {
+            "state": "n",
+            "sourcePath": "C:\\Users\\sebastien.chateau\\hs\\force-app\\main",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 0,
+            "modifiedTime": 1533113259616,
+            "changeTime": 1533113259616,
+            "contentHash": "7505d64a54e061b7acd54ccd58b49dc43500b635",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "C:\\Users\\sebastien.chateau\\hs\\force-app\\main\\default",
+        {
+            "state": "u",
+            "sourcePath": "C:\\Users\\sebastien.chateau\\hs\\force-app\\main\\default",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 0,
+            "modifiedTime": 1533113474967,
+            "changeTime": 1533113474967,
+            "contentHash": "2270d5c541f734a0f96529fc89b4af958ffb3dda"
+        }
+    ],
+    [
+        "C:\\Users\\sebastien.chateau\\hs\\force-app\\main\\default\\aura",
+        {
+            "state": "n",
+            "sourcePath": "C:\\Users\\sebastien.chateau\\hs\\force-app\\main\\default\\aura",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 0,
+            "modifiedTime": 1533113259620,
+            "changeTime": 1533113259620,
+            "contentHash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "C:\\Users\\sebastien.chateau\\hs",
+        {
+            "state": "n",
+            "sourcePath": "C:\\Users\\sebastien.chateau\\hs",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 0,
+            "modifiedTime": 1533113460707,
+            "changeTime": 1533113460707,
+            "contentHash": "ac8ebe8fbf8686ccd99613333554bc80e3ff17df",
+            "isWorkspace": true,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "C:\\Users\\sebastien.chateau\\hs\\force-app\\main\\default\\pages\\HSBoard.page-meta.xml",
+        {
+            "state": "u",
+            "sourcePath": "C:\\Users\\sebastien.chateau\\hs\\force-app\\main\\default\\pages\\HSBoard.page-meta.xml",
+            "isDirectory": false,
+            "isMetadataFile": true,
+            "size": 282,
+            "modifiedTime": 1533113474971,
+            "changeTime": 1533113474971,
+            "contentHash": "025e27f02196257d57f29d197a16bb5bd070b98f"
+        }
+    ],
+    [
+        "C:\\Users\\sebastien.chateau\\hs\\force-app\\main\\default\\pages\\HSBoard.page",
+        {
+            "state": "u",
+            "sourcePath": "C:\\Users\\sebastien.chateau\\hs\\force-app\\main\\default\\pages\\HSBoard.page",
+            "isDirectory": false,
+            "isMetadataFile": false,
+            "size": 164,
+            "modifiedTime": 1533113474975,
+            "changeTime": 1533113474975,
+            "contentHash": "1da39a8217ae203343495260ac27f79112281306"
+        }
+    ],
+    [
+        "C:\\Users\\sebastien.chateau\\hs\\force-app\\main\\default\\pages",
+        {
+            "state": "u",
+            "sourcePath": "C:\\Users\\sebastien.chateau\\hs\\force-app\\main\\default\\pages",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 0,
+            "modifiedTime": 1533113474975,
+            "changeTime": 1533113474975,
+            "contentHash": "35b3d4078f02a238bbd5739ca241eff97e47d8d6"
+        }
+    ]
+]
