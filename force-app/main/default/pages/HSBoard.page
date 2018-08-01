@@ -1,6 +1,194 @@
-<apex:page >
-  <!-- Begin Default Content REMOVE THIS -->
-  <h1>Congratulations</h1>
-  This is your new Page
-  <!-- End Default Content REMOVE THIS -->
+<apex:page showHeader="false" standardStylesheets="false">
+
+    <style>
+        .board {
+        	display: flex;
+        	flex-direction: column;
+        	border-style: dashed;
+        	padding: 10px;
+        }
+        .subboard {
+        	display: flex;
+        	flex-direction: row;
+        	border-style: groove;
+        	margin: 10px;
+        }
+        .creature {
+        	display: flex;
+        	flex-direction: column;
+	        text-align: center;
+    	    border-style: solid;
+        	min-width: 104px;
+        	margin: 10px;
+        }
+        .creatureslot {
+        	display: flex;
+        	flex-direction: column;
+        	min-width: 130px;
+        }
+        .absolute{
+            position:absolute;
+            background:red;
+        	margin: 0px;
+        	animation: hit 0.25s ease-in,
+        				run 0.75s 0.25s forwards;
+        }
+        
+        @keyframes attack {
+            0%, 100% {top: 172px; left: 165px;}
+            25% {top: 100px; left: 41px;}
+        }
+
+        @keyframes hit {
+            0% {top: var(--originTop); left: var(--originLeft)}
+            100% {top: var(--targetTop); left: var(--targetLeft);}
+        }
+
+        @keyframes run {
+            0% {top: var(--targetTop); left: var(--targetLeft);}
+            100% {top: var(--originTop); left: var(--originLeft)}
+        }
+
+        .pic {
+            margin: 10px;
+        }
+        
+        .statbox {
+        	display: flex;
+        	flex-direction: row;
+            margin: 10px;
+        }
+        .stat {
+            margin: auto;
+        }
+        .spacer {
+            width: 120px;
+        }
+    </style>
+    <div id="board" class="board">
+        <div class="subboard">
+            <div id="placeholder">
+                
+            </div>
+            <div class="creatureslot">
+                <div class="creature" id="crea1A" draggable="true" position="0">
+                    <div class="pic">
+                        placeholder
+                    </div>
+                    <div class="statbox">
+                        <div class="stat">
+                            3
+                        </div>
+                        <div class="stat">
+                            3
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="creatureslot">
+                <div class="creature" id="crea1B" draggable="true" position="0">
+                    <div class="pic">
+                        placeholder
+                    </div>
+                    <div class="statbox">
+                        <div class="stat">
+                            3
+                        </div>
+                        <div class="stat">
+                            3
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="subboard">
+            <div class="creatureslot">
+                <div class="creature" id="crea2A" draggable="true" position="0">
+                    <div class="pic">
+                        placeholder
+                    </div>
+                    <div class="statbox">
+                        <div class="stat">
+                            3
+                        </div>
+                        <div class="stat">
+                            3
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="creatureslot">
+                <div class="creature" id="crea2B" draggable="true" position="1">
+                    <div class="pic">
+                        placeholder
+                    </div>
+                    <div class="statbox">
+                        <div class="stat">
+                            3
+                        </div>
+                        <div class="stat">
+                            3
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+    
+    <script>
+    function allowDrop(e) {
+        e.preventDefault();
+    }
+    
+    function drag(e) {
+        e.dataTransfer.setData("attackerId", e.srcElement.id);
+    }
+
+    function drop(e) {
+        var attacker = document.getElementById(e.dataTransfer.getData("attackerId"));
+        var defender = e.target;
+        if(!defender.classList.contains("creature")){
+            defender = defender.closest(".creature");
+        }        
+        attack(attacker, defender);
+    }
+    
+    function attack(attacker, defender) {
+        console.log("attack!");
+        console.log(attacker);
+        console.log(defender);
+        
+        if(!attacker.classList.contains("creature")){
+            attacker = attacker.closest(".creature");
+        }
+        
+        attacker.style.setProperty("--originTop",attacker.offsetTop + "px");
+        attacker.style.setProperty("--originLeft",attacker.offsetLeft + "px");
+        attacker.style.setProperty("--targetTop",defender.offsetTop + defender.offsetHeight - 10  + "px");
+        attacker.style.setProperty("--targetLeft",defender.offsetLeft + "px");
+        attacker.addEventListener("webkitAnimationEnd",endAnimation)
+        
+        var subboard = attacker.parentElement;
+        attacker.classList.add("absolute")
+    }
+    
+    function endAnimation(e) {
+        var attacker = e.target;
+        if(e.animationName=="run"){
+            attacker.classList.remove("absolute");
+        }
+    }
+    
+    (function() {
+        var creatures = document.getElementsByClassName("creature");
+        for(var i = 0 ; i < creatures.length; i++){
+            creatures[i].addEventListener("dragstart", drag);
+            creatures[i].addEventListener("drop", drop);
+            creatures[i].addEventListener("dragover", allowDrop);
+        }
+
+    })();
+    
+    </script>
 </apex:page>
